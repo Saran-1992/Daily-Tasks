@@ -9,27 +9,23 @@ c = a & b
 print(list(c))
 
 #selectionsort
-def ss(arr):
-    n = len(arr)
-    for i in range(n):
-        m = i
-        for j in range(i + 1, n):
-            if arr[j] < arr[m]:
-                m = j
-        arr[i], arr[m] = arr[m], arr[i]
-    return arr
-
 arr = [5, 2, 9, 1, 5, 6]
-print(ss(arr))
+
+for i in range(len(arr)):
+    m = i
+    for j in range(i+1,len(arr)):
+        if arr[j] < arr[m]:
+            m = j 
+    arr[i],arr[m] = arr[m],arr[i]
+    
+print(arr)
 
 #bubblesort
-def bs(arr):
-    n = len(arr)
-    for i in range(n):
-        for j in range(0, n - i - 1):
-            if arr[j] > arr[j + 1]:
-                arr[j], arr[j + 1] = arr[j + 1], arr[j] 
-    return arr
-
 arr = [5, 2, 9, 1, 5, 6]
-print(bs(arr))
+
+for i in range(len(arr)):
+    for j in range(0,len(arr)-1-i):
+        if arr[j] > arr[j+1]:
+            arr[j],arr[j+1] = arr[j+1],arr[j]
+    
+print(arr)
